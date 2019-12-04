@@ -31,24 +31,30 @@
 body {
   margin: 0 auto;
   font-family: "TTLakes";
-  max-width: 1120px;
+  max-width: 1440px;
   background: #f2f2f2;
 }
 
 .wrapper {
-  max-width: 1120px;
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 auto;
+  max-width: 1440px;
 }
 
+/* header */
+
 .header {
-  position: relative;
+  margin: 0 auto;
+  max-width: 1120px;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .nav {
   width: 320px;
   min-height: 100vh;
   background-color: #fff;
-  position: absolute;
-  z-index: 500;
   top: 0;
   left: 0;
   padding: 24px;
@@ -65,15 +71,7 @@ body {
 
 .logo {
   margin-right: auto;
-}
-
-.button {
-  background-color: transparent;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  padding: 0;
+  height: 56px;
 }
 
 .button-close {
@@ -161,8 +159,15 @@ button.btn::after {
   background-image: url("images/user.svg");
 }
 
+.nav__contact-service-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  display: none;
+}
+
 .nav__contact-mail {
   display: block;
+  text-decoration: none;
   margin-top: 16px;
   color: #1B1C21;
   font-size: 16px;
@@ -171,6 +176,7 @@ button.btn::after {
 
 .nav__contact-phone-number {
   display: block;
+  text-decoration: none;
   margin-top: 12px;
   color: #1B1C21;
   font-size: 24px;
@@ -185,6 +191,7 @@ button.btn::after {
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
+  margin-right: 7px;
   color: #1B1C21;
   transition: color 0.3s ease;
 }
@@ -193,12 +200,22 @@ button.btn::after {
   color: #7E7E82;
 }
 
+/* Секция услуги и сервисы */
+
+.main {
+  margin: 0 auto;
+  max-width: 1120px;
+  /* width: 1120px; */
+  display: flex;
+  flex-flow: column nowrap;
+}
+
 .service {
-  max-width: 100%;
+  max-width: 1120px;
   padding-top: 42px;
   padding-bottom: 26px;
   padding-right: 25px;
-  padding-left: 32px;
+  padding-left: 25px;
   background: #f8f8f8;
 }
 
@@ -209,7 +226,7 @@ button.btn::after {
 }
 
 .service-header h2 {
-  margin-left: -32px;
+  margin-left: -25px;
   padding-left: 32px;
   border-left: 2px solid #41f6d7;
   color: #1b1c21;
@@ -218,37 +235,38 @@ button.btn::after {
   margin-right: auto;
 }
 
-.service-header__link1 {
+.service-header__wrap {
   margin-left: auto;
+  display: flex;
+}
+
+.service-header__button:first-child {
   margin-right: 32px;
 }
 
-.service-header__link2 {
-  padding-right: 7px;
-}
-
-.service-header__link1::after {
+.service-header__button:first-child::after {
   background-image: url("images/tools.svg");
+  margin-right: 8px;
 }
 
-.service-header__link2::after {
+.service-header__button::after {
   background-image: url("images/status.svg");
 }
 
-.btn {
+.button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
   display: flex;
   align-items: center;
   font-size: 16px;
   color: #1b1c21;
   font-weight: 500;
-  vertical-align: top;
-  text-decoration: none;
 }
 
-.btn::after {
+.button::after {
   border-radius: 50%;
   background-color: #ff3e79;
-  margin-left: 9px;
   content: "";
   width: 40px;
   height: 40px;
@@ -257,7 +275,11 @@ button.btn::after {
   transition: background-color 0.3s ease;
 }
 
-.btn:hover::after {
+.service-header__button.button::after {
+  margin-left: 8px;
+}
+
+.button:hover::after {
   background-color: #92324f;
 }
 
@@ -265,6 +287,7 @@ button.btn::after {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  justify-content: space-between;
   padding-inline-start: 0;
 }
 
@@ -316,7 +339,7 @@ button.btn::after {
   margin-bottom: 20px;
 }
 
-.service-info__button {
+.hide-and-show-button {
   background-color: transparent;
   border: none;
   color: #1b1c21;
@@ -326,11 +349,181 @@ button.btn::after {
   margin-left: 64px;
 }
 
-.service-info__button::before {
+.hide-and-show-button::before {
   content: "";
   height: 10px;
   width: 8px;
   margin-right: 16px;
   display: inline-block;
   background-image: url("images/svg3.svg");
+}
+
+/* Секция бренды */
+
+.brands {
+  width: 100%;
+  min-height: 600px;
+  background: #F8F8F8;
+  padding-bottom: 25px;
+}
+
+.brands__title {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #7E7E82;
+  font-weight: normal;
+  padding: 16px 0 16px 16px;
+  margin: 0;
+  background: linear-gradient(90deg, #F8F8F8 0%, #FFFFFF 98.61%);
+  border-top: 1px solid #D9FFF5;
+  border-bottom: 1px solid #D9FFF5;
+}
+
+.brands__images-wrap {
+  width: 100%;
+  padding: 25px 0 0 25px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.brands__images-wrap-hidden {
+  height: 180px;
+  overflow: hidden;
+}
+
+.brands__images-item {
+  height: 72px;
+  border: 1px solid #EAEAEA;
+  display: flex;
+  padding: 16px;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 6px;
+  width: 240px;
+  margin-right: 25px;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 769px) and (max-width: 1119px) {
+
+  .brands__images-item {
+    width: 30%;
+  }
+
+  .brands__images-wrap {
+    justify-content: space-around;
+  }
+
+}
+
+@media (max-width: 768) {
+
+  .brands__images-wrap {
+    justify-content: center;
+  }
+
+}
+
+.brands__button.button {
+  background-color: #fff;
+  border: 2px solid #FF3E79;
+  border-radius: 50%;
+}
+
+.brands__button::after {
+  background: url(images/arrow-right-pink.svg) no-repeat 50% 50%;
+}
+
+.brands__button.button:hover::after {
+  background: url(images/arrow-right-white.svg) no-repeat 50% 50% / 10px;
+  background-color: #FF3E79;
+  border: 2px solid #92324f;
+}
+
+.hide-and-show-button.brands__button {
+  margin-left: 32px;
+}
+
+/* Media quares */
+
+@media (max-width:1440px) and (min-width: 769px) {
+
+  .wrapper {
+    flex-flow: column;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .nav {
+    flex-flow: row nowrap;
+    min-height: auto;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav__contact {
+    margin-left: auto;
+    margin-top: 0;
+  }
+
+  .nav__menu-wrap {
+    display: none;
+  }
+
+  .nav__contact-info-wrap {
+    display: none;
+  }
+
+  .nav__contact-service-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .service-header__wrap {
+    display: none;
+  }
+
+  .service-header__button.button {
+    margin: 0;
+  }
+
+  .service-header__button.button::after {}
+
+  .button-search {
+    display: none;
+  }
+
+  .button-close::after {
+    background-image: url("images/menu.svg");
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo::before {
+    content: "";
+    height: 40px;
+    width: 2px;
+    border-radius: 1px;
+    background-color: #EAEAEA;
+    margin-right: 15px;
+  }
+
+  .nav__contact-wrap::after {
+    content: "";
+    display: inline-block;
+    height: 40px;
+    width: 2px;
+    border-radius: 1px;
+    background-color: #EAEAEA;
+    margin-left: 5px;
+    margin-right: 12px;
+  }
 }
