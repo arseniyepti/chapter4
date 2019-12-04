@@ -11,46 +11,58 @@
 
 <body>
   <div class="wrapper">
-    <!-- header -->
+    <nav class="nav">
+      <div class="nav__header"><button class="button button-close"></button><a href="#" class="logo"><img
+            src="images/logo.svg" alt="логотип cps" title="логотип cps"></a><button
+          class="button button-search"></button></div>
+      <div class="nav__menu-wrap">
+        <ul class="nav__menu">
+          <li><a href="#">Ремонт техники</a></li>
+          <li><a href="#">Услуги и сервисы</a></li>
+          <li><a href="#">Корпоративным клиентам</a></li>
+          <li><a href="#">Продавцам техники</a></li>
+          <li><a href="#">Пратнерам</a></li>
+          <li><a href="#">Производителям</a></li>
+          <li><a href="#">Наши сервисные центры</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="nav__contact">
+        <div class="nav__contact-wrap">
+          <button class="button button-phone"></button>
+          <button class="button button-message"></button>
+          <button class="button button-user"></button></div>
+        <div class="nav__contact-info-wrap"><a href="mailto:mail@cps.com" class="nav__contact-mail">mail@cps.com</a><a
+            href="tel:8 800 890 8900" class="nav__contact-phone-number">8 800 890 8900</a>
+          <div class="nav__language"><a href="#" class="nav__language-link">RU</a><a href="#"
+              class="nav__language-link">EN</a><a href="#" class="nav__language-link">CH</a></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- _______________________header________________________________ -->
+
+
     <header class="header">
-      <nav class="nav">
-        <div class="nav__header"><button class="button button-close"></button><a href="#" class="logo"><img
-              src="images/logo.svg" alt="логотип cps" title="логотип cps"></a><button
-            class="button button-search"></button>
+      <div class="header-main">
+        <button class="button button-menu"></button>
+        <a href="#" class="logo"><img src="images/logo.svg" alt="логотип cps" title="логотип cps"></a>
+        <div class="header-main__wrap">
+          <button class="button button-phone"></button>
+          <button class="button button-message"></button>
+          <button class="button button-user"></button>
         </div>
-        <div class="nav__menu-wrap">
-          <ul class="nav__menu">
-            <li><a href="#">Ремонт техники</a></li>
-            <li><a href="#">Услуги и сервисы</a></li>
-            <li><a href="#">Корпоративным клиентам</a></li>
-            <li><a href="#">Продавцам техники</a></li>
-            <li><a href="#">Пратнерам</a></li>
-            <li><a href="#">Производителям</a></li>
-            <li><a href="#">Наши сервисные центры</a></li>
-            <li><a href="#">Контакты</a></li>
-          </ul>
-        </div>
-        <div class="nav__contact">
-          <div class="nav__contact-wrap">
-            <button class="button button-phone"></button>
-            <button class="button button-message"></button>
-            <button class="button button-user"></button>
-          </div>
-          <div class="nav__contact-info-wrap">
-            <a href="mailto:mail@cps.com" class="nav__contact-mail">mail@cps.com</a><a href="tel:8 800 890 8900"
-              class="nav__contact-phone-number">8 800 890 8900</a>
-            <div class="nav__language"><a href="#" class="nav__language-link">RU</a><a href="#"
-                class="nav__language-link">EN</a><a href="#" class="nav__language-link">CH</a></div>
-          </div>
-        </div>
-        <div class="nav__contact-service-buttons">
+        <div class="header-main__service-buttons">
           <button class="service-header__button button"></button>
           <button class="service-header__button button"></button>
         </div>
-      </nav>
+      </div>
     </header>
 
-    <!-- Секция услуги и сервисы -->
+
+    <!-- ____________________Секция услуги и сервисы_____________________ -->
+
+
     <main class="main">
       <section class="service">
         <header class="service-header">
@@ -70,9 +82,10 @@
         </nav>
         <div class="service-info">
           <div class="service-info__text-wrap">
-            <p class="service-info__text">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у
-              нас вы можете отремонтироватьсвой ноутбук Dell с официальной гарантией производителя. </p>
-            <p class="service-info__text">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера,
+            <p class="service-info__text">Мы являемся авторизованным сервисным центром по ремонту техники Dell.
+              Только у нас вы можете отремонтироватьсвой ноутбук Dell с официальной гарантией производителя. </p>
+            <p class="service-info__text">Мы успешно работаем с 1992 года и заслужили репутацию надежного
+              партнера,
               что подтверждает большое количество постоянных клиентов. Мы гордимся тем,
               что к нам обращаются по рекомендациям и,
               в свою очередь,
@@ -81,66 +94,37 @@
             title="Если ты на меня сейчас смотришь, значит я в макете" alt="картинка">
         </div>
       </section>
-
-      <!-- Секция бренды  -->
-
+      <!-- ____________________________Секция бренды______________________ -->
       <section class="brands">
         <h2 class="brands__title">Ремонт техники различных брендов</h2>
         <div class="brands__images-wrap brands__images-wrap-hidden">
-          <div class="brands__images-item">
-            <img class="brands__images" src="images/brands/lenovo.png" alt="lenovo" title="lenovo">
-            <button class="brands__button button"></button>
-          </div>
-          <div class="brands__images-item">
-            <img class="brands__images" src="images/brands/hp.png" alt="hp" title="hp">
-            <button class="brands__button button"></button>
-          </div>
-          <div class="brands__images-item">
-            <img class="brands__images" src="images/brands/bosch.png" alt="bosch" title="bosch">
-            <button class="brands__button button"></button>
-          </div>
-          <div class="brands__images-item">
-            <img class="brands__images" src="images/brands/apple.png" alt="apple" title="apple">
-            <button class="brands__button button"></button>
-          </div>
-          <div class="brands__images-item">
-            <img class="brands__images" src="images/brands/acer.png" alt="acer" title="acer">
-            <button class="brands__button button"></button>
-          </div>
-          <div class="brands__images-item">
-            <img class="brands__images" src="images/brands/viewsonic.png" alt="viewsonic" title="viewsonic">
-            <button class="brands__button button"></button>
-          </div>
-          <div class="brands__images-item">
-            <img class="brands__images" src="images/brands/lenovo.png" alt="lenovo" title="lenovo">
-            <button class="brands__button button"></button>
-          </div>
-          <div class="brands__images-item">
-            <img class="brands__images" src="images/brands/samsung.png" alt="samsung" title="samsung">
-            <button class="brands__button button"></button>
-          </div>
-          <div class="brands__images-item">
-            <img class="brands__images" src="images/brands/sony.png" alt="sony" title="sony">
-            <button class="brands__button button"></button>
-          </div>
-          <div class="brands__images-item">
-            <img class="brands__images" src="images/brands/hp.png" alt="hp" title="hp">
-            <button class="brands__button button"></button>
-          </div>
-          <div class="brands__images-item">
-            <img class="brands__images" src="images/brands/bosch.png" alt="bosch" title="bosch">
-            <button class="brands__button button"></button>
-          </div>
-          <div class="brands__images-item">
-            <img class="brands__images" src="images/brands/apple.png" alt="apple" title="apple">
-            <button class="brands__button button"></button>
-          </div>
-          <div class="brands__images-item">
-            <img class="brands__images" src="images/brands/acer.png" alt="acer" title="acer">
-            <button class="brands__button button"></button>
-          </div>
-        </div>
-        <button id="brands-button" class="hide-and-show-button brands__button">Показать все</button>
+          <div class="brands__images-item"><img class="brands__images" src="images/brands/lenovo.png" alt="lenovo"
+              title="lenovo"><button class="brands__button button"></button></div>
+          <div class="brands__images-item"><img class="brands__images" src="images/brands/hp.png" alt="hp"
+              title="hp"><button class="brands__button button"></button></div>
+          <div class="brands__images-item"><img class="brands__images" src="images/brands/bosch.png" alt="bosch"
+              title="bosch"><button class="brands__button button"></button></div>
+          <div class="brands__images-item"><img class="brands__images" src="images/brands/apple.png" alt="apple"
+              title="apple"><button class="brands__button button"></button></div>
+          <div class="brands__images-item"><img class="brands__images" src="images/brands/acer.png" alt="acer"
+              title="acer"><button class="brands__button button"></button></div>
+          <div class="brands__images-item"><img class="brands__images" src="images/brands/viewsonic.png" alt="viewsonic"
+              title="viewsonic"><button class="brands__button button"></button></div>
+          <div class="brands__images-item"><img class="brands__images" src="images/brands/lenovo.png" alt="lenovo"
+              title="lenovo"><button class="brands__button button"></button></div>
+          <div class="brands__images-item"><img class="brands__images" src="images/brands/samsung.png" alt="samsung"
+              title="samsung"><button class="brands__button button"></button></div>
+          <div class="brands__images-item"><img class="brands__images" src="images/brands/sony.png" alt="sony"
+              title="sony"><button class="brands__button button"></button></div>
+          <div class="brands__images-item"><img class="brands__images" src="images/brands/hp.png" alt="hp"
+              title="hp"><button class="brands__button button"></button></div>
+          <div class="brands__images-item"><img class="brands__images" src="images/brands/bosch.png" alt="bosch"
+              title="bosch"><button class="brands__button button"></button></div>
+          <div class="brands__images-item"><img class="brands__images" src="images/brands/apple.png" alt="apple"
+              title="apple"><button class="brands__button button"></button></div>
+          <div class="brands__images-item"><img class="brands__images" src="images/brands/acer.png" alt="acer"
+              title="acer"><button class="brands__button button"></button></div>
+        </div><button id="brands-button" class="hide-and-show-button brands__button">Показать все</button>
       </section>
     </main>
   </div>

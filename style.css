@@ -42,23 +42,97 @@ body {
   max-width: 1440px;
 }
 
-/* header */
+/* __________________________header___________________________ */
 
 .header {
-  margin: 0 auto;
+  position: relative;
+  width: 100%;
   max-width: 1120px;
+  flex-flow: row nowrap;
+  margin: 0 auto;
+  padding: 18px 24px;
+  align-items: center;
+  background-color: #fff;
+}
+
+.header-main {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.logo::before {
+  content: "";
+  height: 40px;
+  width: 2px;
+  border-radius: 1px;
+  background-color: #EAEAEA;
+  margin-right: 15px;
+}
+
+.header-main__wrap {
   display: flex;
   flex-flow: row nowrap;
 }
 
+.header-main__wrap .button {
+  margin-right: 15px;
+}
+
+.header-main__service-buttons {
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-main__service-buttons::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 2px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: #EAEAEA;
+  margin-right: 7px;
+}
+
+.header-main__service-buttons .button {
+  margin: 0;
+}
+
+.button-menu::after {
+  background: url(images/menu.svg) no-repeat 50% 50%;
+  margin-right: 15px;
+}
+
+.button-search {
+  display: none;
+}
+
+.button-close::after {
+  background-image: url("images/menu.svg");
+}
+
+
+/* ________________________Блок-меню________________________________ */
+
+
 .nav {
+  position: absolute;
   width: 320px;
   min-height: 100vh;
   background-color: #fff;
   top: 0;
   left: 0;
   padding: 24px;
-  display: flex;
+  display: none;
   flex-flow: column nowrap;
   box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
 }
@@ -159,11 +233,6 @@ button.btn::after {
   background-image: url("images/user.svg");
 }
 
-.nav__contact-service-buttons {
-  display: flex;
-  flex-flow: row nowrap;
-  display: none;
-}
 
 .nav__contact-mail {
   display: block;
@@ -200,12 +269,11 @@ button.btn::after {
   color: #7E7E82;
 }
 
-/* Секция услуги и сервисы */
+/* ______________________Секция услуги и сервисы_________________ */
 
 .main {
   margin: 0 auto;
   max-width: 1120px;
-  /* width: 1120px; */
   display: flex;
   flex-flow: column nowrap;
 }
@@ -339,26 +407,7 @@ button.btn::after {
   margin-bottom: 20px;
 }
 
-.hide-and-show-button {
-  background-color: transparent;
-  border: none;
-  color: #1b1c21;
-  font-weight: 500;
-  font-size: 14px;
-  margin-top: 14px;
-  margin-left: 64px;
-}
-
-.hide-and-show-button::before {
-  content: "";
-  height: 10px;
-  width: 8px;
-  margin-right: 16px;
-  display: inline-block;
-  background-image: url("images/svg3.svg");
-}
-
-/* Секция бренды */
+/* _______________________Секция бренды_________________________ */
 
 .brands {
   width: 100%;
@@ -407,10 +456,87 @@ button.btn::after {
   margin-bottom: 8px;
 }
 
+.hide-and-show-button {
+  background-color: transparent;
+  border: none;
+  color: #1b1c21;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 14px;
+  margin-left: 64px;
+}
+
+.hide-and-show-button::before {
+  content: "";
+  height: 10px;
+  width: 8px;
+  margin-right: 16px;
+  display: inline-block;
+  background-image: url("images/svg3.svg");
+}
+
+/* _____________________@media header и блока меню_____________________________ */
+
+@media (min-width: 1440px) {
+  .header {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    position: static;
+  }
+
+  .nav__contact {
+    margin-top: 140px;
+  }
+
+  .button-close {
+    display: none;
+  }
+
+  .logo::before {
+    display: none;
+  }
+
+}
+
+@media (max-width:1440px) {
+
+  .wrapper {
+    flex-flow: column;
+  }
+
+  .service-header__button:first-child {
+    margin-right: 0;
+  }
+
+  .service-header__wrap {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .header-main__wrap {
+    display: none;
+  }
+
+  .header {
+    padding: 18px 8px;
+  }
+
+}
+
+/* _____________________@media Секции-бренды_____________________________ */
+
+
 @media (min-width: 769px) and (max-width: 1119px) {
 
   .brands__images-item {
-    width: 30%;
+    width: 29%;
   }
 
   .brands__images-wrap {
@@ -419,10 +545,14 @@ button.btn::after {
 
 }
 
-@media (max-width: 768) {
+@media (max-width: 768px) {
 
   .brands__images-wrap {
     justify-content: center;
+  }
+
+  .brands__images-item {
+    width: 100%;
   }
 
 }
@@ -445,85 +575,4 @@ button.btn::after {
 
 .hide-and-show-button.brands__button {
   margin-left: 32px;
-}
-
-/* Media quares */
-
-@media (max-width:1440px) and (min-width: 769px) {
-
-  .wrapper {
-    flex-flow: column;
-  }
-
-  .header {
-    width: 100%;
-  }
-
-  .nav {
-    flex-flow: row nowrap;
-    min-height: auto;
-    width: 100%;
-    align-items: center;
-  }
-
-  .nav__contact {
-    margin-left: auto;
-    margin-top: 0;
-  }
-
-  .nav__menu-wrap {
-    display: none;
-  }
-
-  .nav__contact-info-wrap {
-    display: none;
-  }
-
-  .nav__contact-service-buttons {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .service-header__wrap {
-    display: none;
-  }
-
-  .service-header__button.button {
-    margin: 0;
-  }
-
-  .service-header__button.button::after {}
-
-  .button-search {
-    display: none;
-  }
-
-  .button-close::after {
-    background-image: url("images/menu.svg");
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo::before {
-    content: "";
-    height: 40px;
-    width: 2px;
-    border-radius: 1px;
-    background-color: #EAEAEA;
-    margin-right: 15px;
-  }
-
-  .nav__contact-wrap::after {
-    content: "";
-    display: inline-block;
-    height: 40px;
-    width: 2px;
-    border-radius: 1px;
-    background-color: #EAEAEA;
-    margin-left: 5px;
-    margin-right: 12px;
-  }
 }
